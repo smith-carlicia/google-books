@@ -1,33 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
+import  Search from './pages/Search/Search';
+import Saved from './pages/Saved/saved';
+import Navigation from './components/Nav/Nav';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import {useEffect} from 'react';
-import axios from 'axios';
 
 function App() {
-
-  useEffect(() => {
-    axios.get("/api/config").then((response) => {
-      console.log(response.data)
-    })
-  }, []);
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Navigation />
+        <Switch>
+          <Route exact path={["/search", "/saved"]}>
+            <Search />
+          </Route>
+          <Route exact path="/books/:id">
+            <Saved />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

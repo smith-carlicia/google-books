@@ -16,9 +16,10 @@ const theCard = (props) => {
                 <CardImg className="image" src={props.img} />
                 <CardBody>
                     <CardTitle className="cardTitle">{props.title}</CardTitle>
-                   
-                        
-                        <p>{props.desc}</p>     
+                        <p>{props.authors}</p>
+                        <p>{props.date}</p> 
+                        <p>{props.desc}</p>
+                        <p>{props.link}</p>    
                 </CardBody>
             </Card>
         </Container>
