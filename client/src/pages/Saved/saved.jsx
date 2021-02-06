@@ -44,7 +44,7 @@ class Saved extends Component {
               {this.state.books.length ? (
                 <List>
                   <h1>Rendering the resuls will appear here</h1>
-                  {/* {this.state.books.map(book => (
+                  {this.state.books.map(book => (
                     <Book
                       key={book._id}
                       title={book.title}
@@ -62,7 +62,7 @@ class Saved extends Component {
                         </button>
                       )}
                     />
-                  ))} */}
+                  ))}
                 </List>
               ) : (
                 <h2 className="text-center">No Saved Books</h2>
